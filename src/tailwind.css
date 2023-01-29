@@ -1,0 +1,50 @@
+/* src/tailwind.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+	font-family: 'Poppins';
+	font-style: normal;
+	font-weight: 400;
+	src: url('../fonts/poppins-v15-latin-regular.eot'); /* IE9 Compat Modes */
+	src: local(''), url('../fonts/poppins-v15-latin-regular.eot?#iefix') format('embedded-opentype'),
+		/* IE6-IE8 */ url('../fonts/poppins-v15-latin-regular.woff2') format('woff2'),
+		/* Super Modern Browsers */ url('../fonts/poppins-v15-latin-regular.woff') format('woff'),
+		/* Modern Browsers */ url('../fonts/poppins-v15-latin-regular.ttf') format('truetype'),
+		/* Safari, Android, iOS */ url('../fonts/poppins-v15-latin-regular.svg#Poppins') format('svg'); /* Legacy iOS */
+}
+
+@layer components {
+	.sidebar-icon {
+		@apply relative flex items-center justify-center
+      h-12 w-12 mt-2 mb-2 shadow-lg
+      bg-gray-800 text-lightBlue-500 hover:bg-lightBlue-600
+		hover:text-white cursor-pointer
+		rounded-3xl hover:rounded-xl transition-all duration-200
+		ease-linear;
+	}
+
+	.sidebar-text {
+		@apply absolute w-auto p-2 m-2 min-w-max left-14 rounded-md
+		shadow-md text-white bg-gray-900 text-xs font-bold transition-all
+		duration-100 scale-0 origin-left font-sans z-50;
+	}
+
+	.sidebar-mark {
+		@apply absolute w-1 h-[1.25rem] right-[3.25rem]
+		bg-white transition-all
+		rounded-tr-md rounded-br-md z-50
+		duration-300 scale-0 origin-left font-sans;
+	}
+}
+
+@layer utilities {
+	.sidebar-mark-selected {
+		@apply h-10 scale-100;
+	}
+
+	.sidebar-icon-selected {
+		@apply bg-lightBlue-600 rounded-xl text-white;
+	}
+}
